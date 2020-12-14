@@ -1,0 +1,40 @@
+{
+  "name": "my_package",
+  "description": "my personal project",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rimraf ./dist-scenarios/",
+    "local:webdriver:update": "node ./scripts/updateChromeDriver.js",
+    "local:test": "yarn tsc && yarn wd:local:init && protractor ./test-directory/local_conf.js --disableChecks --scenariosRoot=./dist-scenarios/ --patterns=**/*.spec.js",
+    "deploy:test": "yarn tsc && yarn wd:init && protractor ./test-directory/deploy_conf.js --scenariosRoot=./dist-scenarios/ --patterns=**/*.spec.js",
+    "tsc": "yarn clean && npx tsc",
+    "wd:init": "webdriver-manager update",
+    "wd:local:init": "yarn local:webdriver:update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://tsalamito@bitbucket.org/tsalamito/test.git"
+  },
+  "keywords": [],
+  "author": "thomas salamito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://tsalamito@bitbucket.org/tsalamito/test/issues"
+  },
+  "homepage": "https://tsalamito@bitbucket.org/tsalamito/test",
+  "dependencies": {
+    "@types/jasmine": "^3.6.2",
+    "@types/node": "^14.14.10",
+    "jasmine": "^3.6.3",
+    "protractor": "^7.0.0",
+    "protractor-fail-fast": "^3.0.2",
+    "request": "^2.88.2",
+    "rimraf": "^2.6.2",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "eslint": "^7.15.0"
+  }
+}

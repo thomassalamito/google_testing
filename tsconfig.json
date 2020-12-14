@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "outDir": "dist-scenarios/",
+    "sourceMap": true,
+    "target": "es2016",
+    "types": [
+      "jasmine"
+    ],
+    "baseUrl": "./"
+  },
+  "include": [
+    "test-directory/scenarios/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/**",
+    "**/*.po.ts"
+  ]
+}
